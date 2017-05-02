@@ -19,8 +19,15 @@ set clipboard=unnamed
 set tabstop=2
 set shiftwidth=4
 set expandtab
-set number
+
+set number				" Add line numbers 
+
+set fileformats=unix,dos
+
+" Set the fold method
 set foldmethod=indent
+set foldnestmax=1
+
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -28,7 +35,7 @@ if v:progname =~? "evim"
 endif
 
 " Get the defaults that most users want.
-source $VIMRUNTIME/defaults.vim
+source $VIMPREFS/defaults.vim
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
