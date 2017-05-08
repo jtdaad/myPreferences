@@ -21,6 +21,7 @@ set shiftwidth=4
 set expandtab
 
 set number				" Add line numbers 
+set linebreak " line break between words
 
 set fileformats=unix,dos
 
