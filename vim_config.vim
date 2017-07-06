@@ -10,18 +10,18 @@
 "	    for OpenVMS:  sys$login:.vimrc
 
 " My preferences
-set undodir=$VIMPREFS/undo	" set the backup home directory
-set undofile 				" save undo's after file closes
-set undolevels=1000			" how many undo's
-set undoreload=10000			" number of lines to save for undo
+set undodir=$VIMPREFS/undo	    " set the backup home directory
+set undofile 				            " save undo's after file closes
+set undolevels=1000			        " how many undo's
+set undoreload=10000			      " number of lines to save for undo
 set backupdir=$VIMPREFS/backup
-set clipboard=unnamed
+set clipboard=unnamed           " Use the system clipboard for copy/paste
 set tabstop=2
 set shiftwidth=4
 set expandtab
 
-set number				" Add line numbers 
-set linebreak " line break between words
+set number				              " Add line numbers 
+set linebreak                   " line break between words
 
 set fileformats=unix,dos
 
@@ -39,7 +39,7 @@ endif
 source $VIMPREFS/defaults.vim
 
 if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
+  set nobackup		              " do not keep a backup file, use versions instead
 
 endif
 
@@ -73,3 +73,9 @@ endif " has("autocmd")
 if has('syntax') && has('eval')
   packadd matchit
 endif
+
+call plug#begin()
+
+Plug 'https://github.com/leafgarland/typescript-vim.git'
+
+call plug#end()
