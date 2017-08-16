@@ -14,6 +14,12 @@ capslock::Esc
 ; for VIM in console
 capslock::Esc
 
+; skype handling
+;#ifWinActive, ahk_class lync
+;^Enter::Enter
+
+
+
 ; console file navigation shortcuts
 ::www::cd /inetpub/wwwroot/
 ::..::cd ../

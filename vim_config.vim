@@ -29,6 +29,18 @@ set fileformats=unix,dos
 set foldmethod=indent
 set foldnestmax=1
 
+" Settings for fuzzy finder
+set wildmenu
+" Don't offer to open certain files/directories
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+set wildignore+=*.pdf,*.psd
+set wildignore+=node_modules/*,bower_components/*
+
+" Set the working directory to wherever the open file lives
+set autochdir
+
+" `gf` opens file under cursor in a new vertical split
+nnoremap gf :vertical wincmd f<CR>
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
