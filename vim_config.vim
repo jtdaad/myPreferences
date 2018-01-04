@@ -16,11 +16,12 @@ set undolevels=1000			        " how many undo's
 set undoreload=10000			      " number of lines to save for undo
 set backupdir=$VIMPREFS/backup
 set clipboard=unnamed           " Use the system clipboard for copy/paste
-set tabstop=2
-set shiftwidth=4
-set expandtab
+set tabstop=4					" how many columns a tab counts for
+set softtabstop=4				" how many columns when tab is pressed in insert mode
+set shiftwidth=4				" how many columns is indented with re-indent operation
+set expandtab					" converts tab press into spaces
 
-set number				              " Add line numbers 
+set number				        " Add line numbers 
 set linebreak                   " line break between words
 
 set fileformats=unix,dos
@@ -90,5 +91,6 @@ call plug#begin()
 
 Plug 'https://github.com/leafgarland/typescript-vim.git'
 Plug 'elmcast/elm-vim'
+Plug 'fatih/vim-go'
 
 call plug#end()
