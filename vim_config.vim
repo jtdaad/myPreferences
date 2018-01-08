@@ -16,11 +16,12 @@ set undolevels=1000			        " how many undo's
 set undoreload=10000			      " number of lines to save for undo
 set backupdir=$VIMPREFS/backup
 set clipboard=unnamed           " Use the system clipboard for copy/paste
-set tabstop=4					" how many columns a tab counts for
-set softtabstop=4				" how many columns when tab is pressed in insert mode
-set shiftwidth=4				" how many columns is indented with re-indent operation
+set tabstop=2					" how many columns a tab counts for
+set softtabstop=2				" how many columns when tab is pressed in insert mode
+set shiftwidth=0				" how many columns is indented with re-indent operation
 set expandtab					" converts tab press into spaces
 
+set autoindent					" always set autoindenting on
 set number				        " Add line numbers 
 set linebreak                   " line break between words
 
@@ -28,7 +29,7 @@ set fileformats=unix,dos
 
 " Set the fold method
 set foldmethod=indent
-set foldnestmax=1
+set foldnestmax=2
 
 " Settings for fuzzy finder
 set wildmenu
@@ -72,6 +73,17 @@ if has("autocmd")
   autocmd FileType text setlocal textwidth=78
 
   augroup END
+  augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+augroup END
 
 else
 
@@ -92,5 +104,12 @@ call plug#begin()
 Plug 'https://github.com/leafgarland/typescript-vim.git'
 Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'https://github.com/rhysd/vim-clang-format.git'
 
 call plug#end()
+
+
+
