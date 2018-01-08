@@ -90,5 +90,6 @@ call plug#begin()
 
 Plug 'https://github.com/leafgarland/typescript-vim.git'
 Plug 'elmcast/elm-vim'
+Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
