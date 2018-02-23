@@ -13,6 +13,6 @@ augroup END
 Remove duplicate junk that is in there for somreason, such as: `source $VIMRUNTIME/mswin.vim` and any other duplicates you find
 
 ## gist token for syncing visual code
-e1edfcb5dd2ab8dbf2ebb82773fe9796e02a950e
+37f4de1f7b67590eeb4b8d80eb757974a3d4f724
 
 "sync.gist": "2c0e76a2c6e6a9d51a2701b6bf18a2ec"
